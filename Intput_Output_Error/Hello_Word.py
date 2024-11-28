@@ -1,0 +1,1 @@
+print("Hello Word", "Soovib Riho,",sep="\n")
