@@ -1,0 +1,363 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN7JxtLxf2mkE01oiJwm/hl",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/RihoSepp31/TARge24-Programmeerimine/blob/master/Colab\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Alustame põhitõed\n",
+        "\n",
+        "1. Muutujad ja andmetüübid- kuidas salvestada andmeid ( näiteks numbrid või tekst).\n",
+        "2. Tingimuslaused- Kuidas teha otsuseid koodi sees (nt if, else)\n",
+        "3. Tsüklid- kuidas teha midagi korduvalt (nt for, while ).\n",
+        "4. Funksioonid - kuidas jagada kood väiksemateks osadeks, mida saab uuesti kasutada."
+      ],
+      "metadata": {
+        "id": "1LUKcSYF9HFZ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Muutujad ja andmetüübid\n",
+        "\n",
+        "Muutujad on kohad, kus sa saad andmeid hoida. Näiteks võid hoida arvu, teksti.\n",
+        "\n",
+        "Näide:"
+      ],
+      "metadata": {
+        "id": "cuPFnjql_eRn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "utY8GQjm9Ac1",
+        "outputId": "7c57e31b-bf79-48c4-ad4c-552ec37310ca"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Tere, Riho\n",
+            "Sa oled, 31 aastat vana ja 1.77 meetrit pikk.\n"
+          ]
+        }
+      ],
+      "source": [
+        "nimi = \"Riho\" # See on tekst (string)\n",
+        "vanus = 31 # See on number (integer)\n",
+        "pikkus = 1.77 # See on komakohaga number (float)\n",
+        "\n",
+        "print(\"Tere,\", nimi) # Tulemuseks Tere, Riho\n",
+        "print(\"Sa oled,\", vanus, \"aastat vana ja\", pikkus, \"meetrit pikk.\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Küsimus: Mis juhtub kui sa muudaksid muutujate väärtusi ?\n",
+        "\n",
+        "Vastus: Kui muuta muutujate väärtus, siis muutub ka prinditav tulemus"
+      ],
+      "metadata": {
+        "id": "EHgdFc7VAlMG"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Tingimuslaused (if,elif,else) võimaldavad sul teha otsuseid\n",
+        "\n",
+        "Näide:"
+      ],
+      "metadata": {
+        "id": "mDaFOKX6BRM4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "vanus = 19\n",
+        "\n",
+        "if vanus < 18:\n",
+        "  print(\"Sa oled alaealine\") #Jookseb, kui vanus on väiksem kui 18\n",
+        "else:\n",
+        "  print(\"Sa oled täiskasvanu.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "D-5SDOcLBMFf",
+        "outputId": "883d1d79-1e0d-402b-bb31-9764b97c8057"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sa oled täiskasvanu.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Tsüklid\n",
+        "\n",
+        "Tsüklid on mõeldud korduste jaoks, **for** tsüklit kasutatakse siis, kui tead mitu korda midagi korrata\n",
+        "\n",
+        "Näide:\n"
+      ],
+      "metadata": {
+        "id": "XwNd49YdCANG"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Loendame 1 kuni 5\n",
+        "\n",
+        "for arv in range(1, 6): # range(1, 6) tähenab 1 kuni 5\n",
+        "  print(\"See on number:, arv\")"
+      ],
+      "metadata": {
+        "id": "ld5gLgurCgYp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Funktsioonid\n",
+        "\n",
+        "Funktsioonid aitavad koodi paremini organiseerida ja taaskasutada\n",
+        "\n",
+        "Näide:\n"
+      ],
+      "metadata": {
+        "id": "Y6xiNCPiGkO-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def tervitus(nimi):\n",
+        "    print(\"Tere\", nimi)\n",
+        "\n",
+        "  # Kutsume funktsiooni välja\n",
+        "tervitus(\"Riho\")\n",
+        "tervitus(\"Madis\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7eSRlgQPHJrV",
+        "outputId": "4403c44a-099a-4a6b-9f8a-37002f4ecb63"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Tere Riho\n",
+            "Tere Madis\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ülesanne\n",
+        "\n",
+        "Teeme ühe lihtsa ülesande kus ke saame rakendada eelnevat läbinäidatud ja räägitud.\n",
+        "\n",
+        "Vanuse kontroll ja tervitamine\n",
+        "\n",
+        "Kirjutame programmi mis:\n",
+        "\n",
+        "1. Küsib kasutajalt nime.\n",
+        "\n",
+        "2. Küsib kasutajalt vanust.\n",
+        "\n",
+        "3. Kontrollib vanuse põhjal, kas kasutaja on alaealine või täiskasvanu.\n",
+        "\n",
+        "4. Loendab alates 1-st kuni kasutaja vanuseni ja prindib kõik numbrid."
+      ],
+      "metadata": {
+        "id": "MA25b0KRI8kx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nimi = input(\"Mis su nimi on?\")\n",
+        "vanus = int(input(\"Kui vana sa oled?\"))\n",
+        "\n",
+        "if vanus < 18:\n",
+        "    print(nimi, \" , sa oled alaelaine\" )\n",
+        "\n",
+        "else:\n",
+        "    print(nimi, \", Sa oled täiskasvanu\")\n",
+        "\n",
+        "    print(\"Loeme alates 1-st kuni sinu vanuseni:\")\n",
+        "    for arv in range(1, vanus + 1):\n",
+        "      print(arv)"
+      ],
+      "metadata": {
+        "id": "bQbqNA_wI76j"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Teeme ühe harjutuse veel et saaks for in range ja while tsüklist paremini aru\n",
+        "\n",
+        "Harjutus:\n",
+        "\n",
+        "Kirjuta programm, mis prindib numbrid vahemikus 1 kuni 10\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "QWXMhLIrHDXD"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# siin me ei pea küsima kasutajalt sisendit\n",
+        "\n",
+        "for numbrid in  range(1, 11):\n",
+        "  print(numbrid)\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "Pde0dimTHTOA"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Harjutus 2\n",
+        "\n",
+        "Kirjutame programmi, mis prindib kõik paarisnumbrid vahemikus 1 kuni 20. Kasutame range, et hüpata üle ühe"
+      ],
+      "metadata": {
+        "id": "iLphTFpKIDVJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for paarisnumbrid in range(2, 20, 2):\n",
+        "  print(paarisnumbrid)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "collapsed": true,
+        "id": "5N-3fyLWIBxc",
+        "outputId": "e88f6154-6a78-4eae-c9ee-8fbdeb72d1c7"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2\n",
+            "4\n",
+            "6\n",
+            "8\n",
+            "10\n",
+            "12\n",
+            "14\n",
+            "16\n",
+            "18\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Harjutus 3\n",
+        "\n",
+        "Numbrite liitmine.\n",
+        "Loendab numbrid 1 kuni 5ni ja arvutab nende summa. Näitab tulemust pörast tsüklit.\n"
+      ],
+      "metadata": {
+        "id": "BAyxkATjI6V8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "summa = 0 # Loome muutuja, kuhu kogume numbrite summa\n",
+        "\n",
+        "for arv in range(1, 6):\n",
+        "  summa += arv # Lisame iga arvu summale (summa = summa + arv)\n",
+        "\n",
+        "print(\"Summa on:\", summa)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jyElSpQuJM0N",
+        "outputId": "65337b34-d32e-4894-cffe-20eafd445e79"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Summa on: 15\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
